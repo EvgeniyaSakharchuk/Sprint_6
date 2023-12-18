@@ -1,5 +1,6 @@
 import com.example.Feline;
 import com.example.Lion;
+import org.hamcrest.MatcherAssert;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,6 +9,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
+import java.util.regex.Matcher;
 
 
 @RunWith(MockitoJUnitRunner.class)
@@ -34,4 +36,13 @@ public class LionTest {
         Mockito.when(feline.getKittens()).thenReturn(1);
         Assert.assertEquals(1, lion.getKittens());
     }
+    @Test
+    public void getFoodTest() throws Exception {
+        Feline feline = new Feline();
+        Lion lion = new Lion("Самец", feline);
+        List<String>expectedFood = feline.getFood("Хищник");
+        List<String>actualFood = lion.getFood();
+        Assert.assertEquals("не корректный спиок еды",expectedFood, actualFood);
+    }
+
 }

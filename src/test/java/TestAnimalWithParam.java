@@ -7,10 +7,10 @@ import org.junit.runners.Parameterized;
 import java.util.List;
 
 @RunWith(Parameterized.class)
-public class AnimalTestWithParam {
+public class TestAnimalWithParam {
     private final String animalKind;
     private final List<String> expected;
-    public AnimalTestWithParam(String family, List<String> expected) {
+    public TestAnimalWithParam(String family, List<String> expected) {
         this.animalKind = family;
         this.expected = expected;
     }

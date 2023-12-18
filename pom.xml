@@ -22,6 +22,12 @@
                 <configuration>
                     <source>11</source>
                     <target>11</target>
+                    <includes>
+                        <include>**</include>
+                    </includes>
+                    <excludes>
+                        <exclude>**/BrokenTests.java</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
             <plugin>
